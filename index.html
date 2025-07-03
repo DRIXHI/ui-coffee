@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brew & Bloom | Artisanal Coffee Shop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+        
+        :root {
+            --primary: #6F4E37;
+            --secondary: #E3C4A8;
+            --accent: #A67B5B;
+            --light: #F8F5F2;
+            --dark: #3E2723;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+        }
+        
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1445116572660-236099ec97a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 80vh;
+        }
+        
+        .menu-item {
+            transition: all 0.3s ease;
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 60vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-serif font-bold text-[#6F4E37]">Brew & Bloom</a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-[#6F4E37] focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-[#6F4E37] hover:text-[#A67B5B] font-medium">Home</a>
+                    <a href="#about" class="text-[#6F4E37] hover:text-[#A67B5B] font-medium">About</a>
+                    <a href="#menu" class="text-[#6F4E37] hover:text-[#A67B5B] font-medium">Menu</a>
+                    <a href="#gallery" class="text-[#6F4E37] hover:text-[#A67B5B] font-medium">Gallery</a>
+                    <a href="#contact" class="text-[#6F4E37] hover:text-[#A67B5B] font-medium">Visit Us</a>
+                    <a href="#events" class="text-[#6F4E37] hover:text-[#A67B5B] font-medium">Events</a>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="#home" class="block py-2 text-[#6F4E37] hover:text-[#A67B5B]">Home</a>
+                <a href="#about" class="block py-2 text-[#6F4E37] hover:text-[#A67B5B]">About</a>
+                <a href="#menu" class="block py-2 text-[#6F4E37] hover:text-[#A67B5B]">Menu</a>
+                <a href="#gallery" class="block py-2 text-[#6F4E37] hover:text-[#A67B5B]">Gallery</a>
+                <a href="#contact" class="block py-2 text-[#6F4E37] hover:text-[#A67B5B]">Visit Us</a>
+                <a href="#events" class="block py-2 text-[#6F4E37] hover:text-[#A67B5B]">Events</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero flex items-center justify-center text-center text-white">
+        <div class="px-6 max-w-4xl">
+            <h1 class="font-serif text-5xl md:text-6xl font-bold mb-6">Brew & Bloom</h1>
+            <p class="text-2xl mb-8">Sip. Relax. Connect.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#menu" class="bg-[#6F4E37] hover:bg-[#A67B5B] text-white font-bold py-3 px-6 rounded-full transition duration-300">Order Online</a>
+                <a href="#contact" class="bg-transparent hover:bg-white hover:text-[#6F4E37] text-white font-bold py-3 px-6 border-2 border-white rounded-full transition duration-300">Visit Us Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl font-bold text-[#6F4E37] mb-4">Our Story</h2>
+                <div class="w-24 h-1 bg-[#A67B5B] mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1517705008128-361805f42e86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" alt="Coffee shop interior" class="rounded-lg shadow-xl w-full">
+                </div>
+                <div class="lg:w-1/2">
+                    <h3 class="font-serif text-3xl text-[#6F4E37] mb-6">Where Community & Coffee Flourish</h3>
+                    <p class="text-lg mb-6">Founded in 2015, Brew & Bloom began as a dream to create more than just a coffee shop - we wanted to cultivate a space where connections blossom as beautifully as our carefully crafted beverages.</p>
+                    <p class="text-lg mb-6">We're committed to ethically sourced beans from small farms, ensuring fair wages and sustainable practices. Every cup tells a story of the hands that nurtured it from seed to sip.</p>
+                    <div class="flex flex-wrap gap-4 mb-6">
+                        <div class="flex items-center">
+                            <i class="fas fa-seedling text-[#A67B5B] mr-2"></i>
+                            <span>Ethically Sourced</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-heart text-[#A67B5B] mr-2"></i>
+                            <span>Community Focused</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-leaf text-[#A67B5B] mr-2"></i>
+                            <span>Sustainable Practices</span>
+                        </div>
+                    </div>
+                    <a href="#contact" class="inline-block bg-[#6F4E37] hover:bg-[#A67B5B] text-white font-bold py-3 px-6 rounded-full transition duration-300">Meet Our Team</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-20 bg-[#F8F5F2]">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl font-bold text-[#6F4E37] mb-4">Our Menu</h2>
+                <div class="w-24 h-1 bg-[#A67B5B] mx-auto"></div>
+                <p class="mt-6 max-w-2xl mx-auto">Seasonal selections crafted with care. Ask about our rotating specials!</p>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-8 mb-12">
+                <button class="menu-category active px-4 py-2 rounded-full bg-[#6F4E37] text-white" data-category="all">All Items</button>
+                <button class="menu-category px-4 py-2 rounded-full border border-[#6F4E37] text-[#6F4E37] hover:bg-[#6F4E37] hover:text-white" data-category="coffee">Coffee</button>
+                <button class="menu-category px-4 py-2 rounded-full border border-[#6F4E37] text-[#6F4E37] hover:bg-[#6F4E37] hover:text-white" data-category="tea">Tea</button>
+                <button class="menu-category px-4 py-2 rounded-full border border-[#6F4E37] text-[#6F4E37] hover:bg-[#6F4E37] hover:text-white" data-category="pastry">Pastries</button>
+                <button class="menu-category px-4 py-2 rounded-full border border-[#6F4E37] text-[#6F4E37] hover:bg-[#6F4E37] hover:text-white" data-category="special">Seasonal</button>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Coffee Items -->
+                <div class="menu-item bg-white p-6 rounded-lg shadow-md" data-category="coffee">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="font-serif text-xl font-bold text-[#6F4E37]">Espresso</h3>
+                        <span class="font-bold text-[#A67B5B]">$2.50</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Our signature single-origin espresso with rich caramel notes.</p>
+                    <div class="flex gap-2">
+                        <span class="text-xs bg-[#E3C4A8] text-[#6F4E37] px-2 py-1 rounded">Strong</span>
+                    </div>
+                </div>
+                
+                <div class="menu-item bg-white p-6 rounded-lg shadow-md" data-category="coffee">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="font-serif text-xl font-bold text-[#6F4E37]">Cappuccino</h3>
+                        <span class="font-bold text-[#A67B5B]">$3.50</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Perfectly balanced espresso with velvety steamed milk.</p>
+                    <div class="flex gap-2">
+                        <span class="text-xs bg-[#E3C4A8] text-[#6F4E37] px-2 py-1 rounded">Classic</span>
+                    </div>
+                </div>
+                
+                <div class="menu-item bg-white p-6 rounded-lg shadow-md" data-category="coffee special">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="font-serif text-xl font-bold text-[#6F4E37]">Honey Lavender Latte</h3>
+                        <span class="font-bold text-[#A67B5B]">$4.50</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">House-made lavender syrup with local honey and espresso.</p>
+                    <div class="flex gap-2">
+                        <span class="text-xs bg-[#E3C4A8] text-[#6F4E37] px-2 py-1 rounded">Seasonal</span>
+                        <span class="text-xs bg-[#E3C4A8] text-[#6F4E37] px-2 py-1 rounded">Floral</span>
+                    </div>
+                </div>
+                
+                <!-- Tea Items -->
+                <div class="menu-item bg-white p-6 rounded-lg shadow-md" data-category="tea">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="font-serif text-xl font-bold text-[#6F4E37]">Earl Grey</h3>
+                        <span class="font-bold text-[#A67B5B]">$2.50</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Classic bergamot black tea, served hot or iced.</p>
+                    <div class="flex gap-2">
+                        <span class="text-xs bg-[#E3C4A8] text-[#6F4E37] px-2 py-1 rounded">Aromatic</span>
+                    </div>
+                </div>
+                
+                <div class="menu-item bg-white p-6 rounded-lg shadow-md" data-category="tea">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="font-serif text-xl font-bold text-[#6F4E37]">Matcha Latte</h3>
+                        <span class="font-bold text-[#A67B5B]">$4.00</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Ceremonial-grade matcha whisked with steamed milk.</p>
+                    <div class="flex gap-2">
+                        <span class="text-xs bg-[#E3C4A8] text-[#6F4E37] px-2 py-1 rounded">Vegan Option</span>
+                    </div>
+                </div>
+                
+                <!-- Pastry Items -->
+                <div class="menu-item bg-white p-6 rounded-lg shadow-md" data-category="pastry">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="font-serif text-xl font-bold text-[#6F4E37]">Almond Croissant</h3>
+                        <span class="font-bold text-[#A67B5B]">$3.50</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Flaky croissant filled with almond cream and sliced almonds.</p>
+                    <div class="flex gap-2">
+                        <span class="text-xs bg-[#E3C4A8] text-[#6F4E37] px-2 py-1 rounded">Baked Daily</span>
+                    </div>
+                </div>
+                
+                <div class="menu-item bg-white p-6 rounded-lg shadow-md" data-category="pastry">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="font-serif text-xl font-bold text-[#6F4E37]">Avocado Toast</h3>
+                        <span class="font-bold text-[#A67B5B]">$7.50</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Sourdough with smashed avocado, cherry tomatoes, and microgreens.</p>
+                    <div class="flex gap-2">
+                        <span class="text-xs bg-[#E3C4A8] text-[#6F4E37] px-2 py-1 rounded">Vegan</span>
+                        <span class="text-xs bg-[#E3C4A8] text-[#6F4E37] px-2 py-1 rounded">Gluten-Free Option</span>
+                    </div>
+                </div>
+                
+                <div class="menu-item bg-white p-6 rounded-lg shadow-md" data-category="pastry special">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="font-serif text-xl font-bold text-[#6F4E37]">Pumpkin Spice Scone</h3>
+                        <span class="font-bold text-[#A67B5B]">$3.00</span>
+                    </div>
+                    <p class="text-gray-600 mb-4">Seasonal favorite with warm spices and vanilla glaze.</p>
+                    <div class="flex gap-2">
+                        <span class="text-xs bg-[#E3C4A8] text-[#6F4E37] px-2 py-1 rounded">Seasonal</span>
+                        <span class="text-xs bg-[#E3C4A8] text-[#6F4E37] px-2 py-1 rounded">Baked Daily</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block bg-[#6F4E37] hover:bg-[#A67B5B] text-white font-bold py-3 px-6 rounded-full transition duration-300">View Full Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl font-bold text-[#6F4E37] mb-4">Our Space</h2>
+                <div class="w-24 h-1 bg-[#A67B5B] mx-auto"></div>
+                <p class="mt-6 max-w-2xl mx-auto">Step into our welcoming atmosphere where every corner tells a story.</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1517705008128-361805f42e86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" alt="Coffee shop interior" class="w-full h-64 object-cover transition duration-500 hover:scale-105">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1453614512568-c4024d13c247?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80" alt="Barista making coffee" class="w-full h-64 object-cover transition duration-500 hover:scale-105">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Latte art" class="w-full h-64 object-cover transition duration-500 hover:scale-105">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Coffee shop seating" class="w-full h-64 object-cover transition duration-500 hover:scale-105">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Coffee brewing" class="w-full h-64 object-cover transition duration-500 hover:scale-105">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1481833761820-0509d3217039?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Coffee and pastry" class="w-full h-64 object-cover transition duration-500 hover:scale-105">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visit Us / Contact Section -->
+    <section id="contact" class="py-20 bg-[#F8F5F2]">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl font-bold text-[#6F4E37] mb-4">Visit Us</h2>
+                <div class="w-24 h-1 bg-[#A67B5B] mx-auto"></div>
+                <p class="mt-6 max-w-2xl mx-auto">We'd love to welcome you to our cozy corner of the neighborhood.</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2">
+                    <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+                        <h3 class="font-serif text-2xl text-[#6F4E37] mb-6">Hours</h3>
+                        <ul class="space-y-4">
+                            <li class="flex justify-between border-b pb-2">
+                                <span class="font-medium">Monday - Friday</span>
+                                <span>7:00 AM - 9:00 PM</span>
+                            </li>
+                            <li class="flex justify-between border-b pb-2">
+                                <span class="font-medium">Saturday</span>
+                                <span>8:00 AM - 12:00 PM</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="font-medium">Sunday</span>
+                                <span>8:00 AM - 8:00 PM</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-lg shadow-md">
+                        <h3 class="font-serif text-2xl text-[#6F4E37] mb-6">Contact</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-[#A67B5B] mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-medium">Address</h4>
+                                    <p>123 Coffee Lane, Gudele one </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-phone-alt text-[#A67B5B] mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-medium">Phone</h4>
+                                    <p>+211 928 123 123</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-envelope text-[#A67B5B] mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-medium">Email</h4>
+                                    <p>hello@brewandbloom.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-medium mb-4">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="text-[#6F4E37] hover:text-[#A67B5B] text-xl"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="text-[#6F4E37] hover:text-[#A67B5B] text-xl"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="text-[#6F4E37] hover:text-[#A67B5B] text-xl"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="text-[#6F4E37] hover:text-[#A67B5B] text-xl"><i class="fab fa-tiktok"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-white p-8 rounded-lg shadow-md h-full">
+                        <h3 class="font-serif text-2xl text-[#6F4E37] mb-6">Get In Touch</h3>
+                        <form>
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-700 mb-2">Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#A67B5B]">
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 mb-2">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#A67B5B]">
+                            </div>
+                            <div class="mb-4">
+                                <label for="subject" class="block text-gray-700 mb-2">Subject</label>
+                                <input type="text" id="subject" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#A67B5B]">
+                            </div>
+                            <div class="mb-4">
+                                <label for="message" class="block text-gray-700 mb-2">Message</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#A67B5B]"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-[#6F4E37] hover:bg-[#A67B5B] text-white font-bold py-3 px-6 rounded-full transition duration-300">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-white rounded-lg shadow-xl overflow-hidden">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215256627966!2d-73.9878449245256!3d40.74844097138893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1689875836080!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events & Community Section -->
+    <section id="events" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl font-bold text-[#6F4E37] mb-4">Events & Community</h2>
+                <div class="w-24 h-1 bg-[#A67B5B] mx-auto"></div>
+                <p class="mt-6 max-w-2xl mx-auto">Join us for special gatherings that bring our community together.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-[#F8F5F2] rounded-lg overflow-hidden shadow-md">
+                    <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2012&q=80" alt="Live music event" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-sm text-[#A67B5B] font-medium">Every Friday</span>
+                            <span class="text-xs bg-[#E3C4A8] text-[#6F4E37] px-2 py-1 rounded">7-9 PM</span>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-[#6F4E37] mb-2">Live Music Nights</h3>
+                        <p class="text-gray-600 mb-4">Local musicians perform in our intimate backroom space.</p>
+                        <a href="#" class="text-[#6F4E37] font-medium hover:text-[#A67B5B] inline-flex items-center">Learn More <i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+                
+                <div class="bg-[#F8F5F2] rounded-lg overflow-hidden shadow-md">
+                    <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Book club meeting" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-sm text-[#A67B5B] font-medium">First Tuesday</span>
+                            <span class="text-xs bg-[#E3C4A8] text-[#6F4E37] px-2 py-1 rounded">6-8 PM</span>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-[#6F4E37] mb-2">Book Club</h3>
+                        <p class="text-gray-600 mb-4">Monthly discussions with fellow literature lovers over coffee.</p>
+                        <a href="#" class="text-[#6F4E37] font-medium hover:text-[#A67B5B] inline-flex items-center">Learn More <i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+                
+                <div class="bg-[#F8F5F2] rounded-lg overflow-hidden shadow-md">
+                    <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Latte art workshop" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-sm text-[#A67B5B] font-medium">Third Saturday</span>
+                            <span class="text-xs bg-[#E3C4A8] text-[#6F4E37] px-2 py-1 rounded">10 AM-12 PM</span>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-[#6F4E37] mb-2">Latte Art Workshop</h3>
+                        <p class="text-gray-600 mb-4">Learn the craft of beautiful coffee art from our baristas.</p>
+                        <a href="#" class="text-[#6F4E37] font-medium hover:text-[#A67B5B] inline-flex items-center">Learn More <i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block bg-[#6F4E37] hover:bg-[#A67B5B] text-white font-bold py-3 px-6 rounded-full transition duration-300">View All Events</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loyalty Program Section -->
+    <section class="py-20 bg-[#6F4E37] text-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <h2 class="font-serif text-4xl font-bold mb-6">Join Our Bloom Club</h2>
+                    <p class="text-xl mb-8">Earn points with every purchase and enjoy exclusive perks as part of our coffee community.</p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#E3C4A8] mt-1 mr-3"></i>
+                            <span>1 point for every $1 spent</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#E3C4A8] mt-1 mr-3"></i>
+                            <span>Free birthday drink</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#E3C4A8] mt-1 mr-3"></i>
+                            <span>Exclusive member events</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-[#E3C4A8] mt-1 mr-3"></i>
+                            <span>Early access to new menu items</span>
+                        </li>
+                    </ul>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#" class="bg-white hover:bg-[#F8F5F2] text-[#6F4E37] font-bold py-3 px-6 rounded-full transition duration-300 text-center">Sign Up Now</a>
+                        <a href="#" class="bg-transparent hover:bg-[#A67B5B] text-white font-bold py-3 px-6 border-2 border-white rounded-full transition duration-300 text-center">Learn More</a>
+                    </div>
+                </div>
+                <div class="lg:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1565049786474-dcca7ea1e72b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Coffee loyalty card" class="rounded-lg shadow-xl w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#3E2723] text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="font-serif text-xl font-bold mb-4">Brew & Bloom</h3>
+                    <p class="mb-4">Where every cup tells a story and every visit feels like coming home.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-[#E3C4A8] hover:text-white text-xl"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-[#E3C4A8] hover:text-white text-xl"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-[#E3C4A8] hover:text-white text-xl"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-[#E3C4A8] hover:text-white text-xl"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-serif text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-[#E3C4A8] transition duration-300">Home</a></li>
+                        <li><a href="#about" class="hover:text-[#E3C4A8] transition duration-300">About</a></li>
+                        <li><a href="#menu" class="hover:text-[#E3C4A8] transition duration-300">Menu</a></li>
+                        <li><a href="#events" class="hover:text-[#E3C4A8] transition duration-300">Events</a></li>
+                        <li><a href="#contact" class="hover:text-[#E3C4A8] transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-serif text-lg font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-[#E3C4A8] mt-1 mr-3"></i>
+                            <span>123 Coffee Lane, Beanville, CA 90210</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt text-[#E3C4A8] mt-1 mr-3"></i>
+                            <span>(555) 123-4567</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope text-[#E3C4A8] mt-1 mr-3"></i>
+                            <span>hello@brewandbloom.com</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                
+            </div>
+            
+            <div class="border-t border-[#6F4E37] mt-12 pt-8 text-center text-sm">
+                <p>&copy; 2025 Brew & Bloom. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Menu category filtering
+        const categoryButtons = document.querySelectorAll('.menu-category');
+        const menuItems = document.querySelectorAll('.menu-item');
+        
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                categoryButtons.forEach(btn => {
+                    btn.classList.remove('active', 'bg-[#6F4E37]', 'text-white');
+                    btn.classList.add('border', 'border-[#6F4E37]', 'text-[#6F4E37]');
+                });
+                
+                // Add active class to clicked button
+                this.classList.add('active', 'bg-[#6F4E37]', 'text-white');
+                this.classList.remove('border', 'border-[#6F4E37]', 'text-[#6F4E37]');
+                
+                const category = this.getAttribute('data-category');
+                
+                // Show/hide menu items based on category
+                menuItems.forEach(item => {
+                    if (category === 'all' || item.getAttribute('data-category').includes(category)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
